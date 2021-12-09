@@ -18,6 +18,7 @@ public class Queue<E> {
 
 	}
 
+	// Deletion operation. Removes first element
 	public E remove() throws EmptyDataStructureException {
 		if (isEmpty) {
 			throw new EmptyDataStructureException("Queue");
@@ -35,6 +36,7 @@ public class Queue<E> {
 		return result;
 	}
 
+	// Insertion operation. Inserts element at top
 	public void add(E data) {
 		Node newNode = new Node(data);
 		if (isEmpty) {
@@ -51,6 +53,14 @@ public class Queue<E> {
 
 		}
 
+	}
+
+	// Peek operation. Returns last element
+
+	public E peek() throws EmptyDataStructureException {
+		if (isEmpty)
+			throw new EmptyDataStructureException("Queue");
+		return last.data;
 	}
 
 	private class Node {

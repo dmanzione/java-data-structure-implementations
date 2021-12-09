@@ -4,6 +4,8 @@ public class Main {
 
 	public static void main(String[] args) throws EmptyDataStructureException {
 
+		//LINKED LIST TESTS
+		
 		// Check creation of list with parameter
 		SinglyLinkedList<String> singlyList = new SinglyLinkedList<String>("First Element");
 
@@ -57,6 +59,18 @@ public class Main {
 		System.out.println(stack.pop());
 		System.out.println(stack.pop());
 		
+		Stack<Long> stack1 = new Stack<>();
+		stack1.push(423423l);
+		stack1.push(423l);
+		stack1.push(4234l);
+		
+		System.out.println(stack1.pop());
+		System.out.println(stack1.pop());
+		System.out.println(stack1.pop());
+		
+		//QUEUE TESTS
+		
+		Queue<String> queue = new Queue<>();
 	}
 
 }
