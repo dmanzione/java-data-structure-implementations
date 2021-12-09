@@ -1,34 +1,48 @@
 package lists;
 
 public class Queue<E> {
-	Node first;
-	Node last;
-	boolean isEmpty = true;
-	int size = 0;
-	
-	
-	//Constructor with parameter
-	Queue(E data){
+	private Node first;
+	private Node last;
+	private boolean isEmpty = true;
+	private int size = 0;
+
+	// Constructor with parameter
+	Queue(E data) {
 		first = last = new Node(data);
 		size++;
-		isEmpty=false;
+		isEmpty = false;
 	}
-	
-	
-	
-	//Parameterless constructor
-	Queue(){
-		
+
+	// Parameterless constructor
+	Queue() {
+
 	}
-	
-	
-	private class Node{
+
+	public E remove() throws EmptyDataStructureException {
+		if (isEmpty) {
+			throw new EmptyDataStructureException("Queue");
+		}
+
+		E result = first.data;
+
+		if (size == 1) {
+			first = null;
+
+		} else {
+			first = first.next;
+		}
+
+		return result;
+	}
+
+	private class Node {
 		E data;
 		Node next;
-		Node(E data){
+		Node previous;
+
+		Node(E data) {
 			this.data = data;
 		}
-		
 
 	}
 }
