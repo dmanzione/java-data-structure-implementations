@@ -149,6 +149,11 @@ public class SinglyLinkedList<E> {
 
 	}
 
+	// Get size operation
+	public int getSize() {
+		return size;
+	}
+
 	private class Node {
 
 		Node(E data) {

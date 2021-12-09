@@ -63,6 +63,11 @@ public class Stack<E> {
 			return top.data;
 	}
 
+	// Get size operation
+	public int getSize() {
+		return size;
+	}
+
 	private class Node {
 		E data;
 		Node next;

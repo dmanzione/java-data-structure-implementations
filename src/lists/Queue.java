@@ -6,6 +6,8 @@ public class Queue<E> {
 	private boolean isEmpty = true;
 	private int size = 0;
 
+	
+
 	// Constructor with parameter
 	Queue(E data) {
 		first = last = new Node(data);
@@ -27,12 +29,15 @@ public class Queue<E> {
 		E result = first.data;
 
 		if (size == 1) {
-			first = null;
-
+			first = last = null;
+			isEmpty=true;
+			size--;
 		} else {
+			
 			first = first.next;
+			size--;
 		}
-		size--;
+		
 		return result;
 	}
 
@@ -44,13 +49,14 @@ public class Queue<E> {
 			size++;
 			isEmpty = false;
 		} else if (size == 1) {
-
-			first.next = last;
 			last = newNode;
+			size++;
+			first.next = last;
+
 		} else {
 			last.next = newNode;
 			last = newNode;
-
+			size++;
 		}
 
 	}
@@ -62,7 +68,13 @@ public class Queue<E> {
 			throw new EmptyDataStructureException("Queue");
 		return last.data;
 	}
+	
+	// Get size operation
+	public int getSize() {
+		return size;
+	}
 
+	// Node nested class
 	private class Node {
 		E data;
 		Node next;
@@ -71,5 +83,11 @@ public class Queue<E> {
 			this.data = data;
 		}
 
+		@Override
+		public String toString() {
+			return String.valueOf(data);
+		}
+
 	}
+
 }

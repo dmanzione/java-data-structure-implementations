@@ -70,7 +70,20 @@ public class Main {
 		
 		//QUEUE TESTS
 		
+		//Insertion operations.
 		Queue<String> queue = new Queue<>();
+		
+		queue.add("Hello");
+		System.out.println(queue.peek());
+		queue.add("Hi");
+		System.out.println(queue.peek());
+		queue.add("Ciao");
+		System.out.println(queue.peek());
+		
+		//Removal operations
+		System.out.println(queue.remove());
+		System.out.println(queue.remove());
+		System.out.println(queue.remove());
 	}
 
 }
