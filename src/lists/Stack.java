@@ -1,18 +1,18 @@
 package lists;
 
 public class Stack<E> {
-	
+
 	boolean isEmpty = true;
 	int size = 0;
 	Node top;
-	
+
 	// Parameterless constructor
 	Stack() {
-		
+
 	}
 
 	// Constructor with parameters
-	Stack(E data){
+	Stack(E data) {
 		top = new Node(data);
 		isEmpty = false;
 		size++;
@@ -20,19 +20,49 @@ public class Stack<E> {
 
 	public void push(E data) {
 		Node newNode = new Node(data);
-		if(isEmpty) {
+
+		if (isEmpty) {
 			top = newNode;
-		}else {
+
+			isEmpty = false;
+		} else {
 			top.next = newNode;
+			newNode.previous = top;
 			top = newNode;
+			
+
+		}
+
+		size++;
+	}
+
+	public E pop() throws EmptyDataStructureException {
+		if(isEmpty) {
+			throw new EmptyDataStructureException("Stack");
+		}else {
+			E result = top.data;
+			if(size == 1) {
+				
+				top = null;
+				isEmpty = true;
+				size = 0;
+				
+				
+			}else {
+				
+				top = top.previous;
+				top.next = null;
+				size--;
+			}
+			return result;
 		}
 	}
-	
 
 	
 	private class Node {
 		E data;
 		Node next;
+		Node previous;
 
 		Node(E data) {
 			this.data = data;

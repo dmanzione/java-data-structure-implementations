@@ -2,7 +2,7 @@ package lists;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws EmptyDataStructureException {
 
 		// Check creation of list with parameter
 		SinglyLinkedList<String> singlyList = new SinglyLinkedList<String>("First Element");
@@ -46,8 +46,17 @@ public class Main {
 		singlyList.remove("any");
 		System.out.println(singlyList);
 
+		//STACK TESTS
 		
-
+		Stack<String> stack = new Stack<>();
+		stack.push("Hello");
+		stack.push("Hi");
+		stack.push("Ciao");
+		
+		System.out.println(stack.pop());
+		System.out.println(stack.pop());
+		System.out.println(stack.pop());
+		
 	}
 
 }
