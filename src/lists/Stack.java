@@ -29,7 +29,6 @@ public class Stack<E> {
 			top.next = newNode;
 			newNode.previous = top;
 			top = newNode;
-			
 
 		}
 
@@ -37,19 +36,18 @@ public class Stack<E> {
 	}
 
 	public E pop() throws EmptyDataStructureException {
-		if(isEmpty) {
+		if (isEmpty) {
 			throw new EmptyDataStructureException("Stack");
-		}else {
+		} else {
 			E result = top.data;
-			if(size == 1) {
-				
+			if (size == 1) {
+
 				top = null;
 				isEmpty = true;
 				size = 0;
-				
-				
-			}else {
-				
+
+			} else {
+
 				top = top.previous;
 				top.next = null;
 				size--;
@@ -58,7 +56,13 @@ public class Stack<E> {
 		}
 	}
 
-	
+	public E peek() throws EmptyDataStructureException {
+		if (isEmpty)
+			throw new EmptyDataStructureException("Stack");
+		else
+			return top.data;
+	}
+
 	private class Node {
 		E data;
 		Node next;
