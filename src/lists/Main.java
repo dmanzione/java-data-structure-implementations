@@ -31,7 +31,8 @@ public class Main {
 		System.out.println(singlyList);
 
 		// Test removal of several elements at once
-		singlyList.remove("First Element", "hello");
+		singlyList.remove("First Element");
+		singlyList.remove("Hello");
 		System.out.println(singlyList);
 
 		// Test removal when there is one element and element is not in list
@@ -45,13 +46,7 @@ public class Main {
 		singlyList.remove("any");
 		System.out.println(singlyList);
 
-		// Test addition of several elements at once
-		singlyList.add("First Element", "hi", "hello", "ciao");
 		
-		System.out.println(singlyList);
-		
-		singlyList.remove("First Element", "hi", "hello", "ciao");
-		System.out.println(singlyList);
 
 	}
 
