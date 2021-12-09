@@ -47,6 +47,10 @@ public class Main {
 
 		// Test addition of several elements at once
 		singlyList.add("First Element", "hi", "hello", "ciao");
+		
+		System.out.println(singlyList);
+		
+		singlyList.remove("First Element", "hi", "hello", "ciao");
 		System.out.println(singlyList);
 
 	}

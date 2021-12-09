@@ -30,6 +30,7 @@ public class SinglyLinkedList<E> {
 				head = newNode;
 
 				// Update information
+				size = 1;
 				isEmpty = false;
 
 			} else {
@@ -112,6 +113,7 @@ public class SinglyLinkedList<E> {
 					// Update information about list
 					size--;
 
+					
 					// Continue iterating through arguments
 					continue argIteration;
 
@@ -140,7 +142,7 @@ public class SinglyLinkedList<E> {
 		// If list is not empty, traverse list, convert each node data into String
 		// object, concatenate
 		if (!isEmpty) {
-			for (int i = 0; i < size; i++) {
+			for (int i = 0; i < size-1; i++) {
 				myList += traversalNode;
 				if (i < size - 1) {
 					myList += "-> ";
