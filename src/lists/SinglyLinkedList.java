@@ -19,8 +19,8 @@ public class SinglyLinkedList<E> {
 
 	// Adding node to list
 	void add(E... dataVarArg) {
-		
-		//Perform add operation for each argument provided
+
+		// Perform add operation for each argument provided
 
 		for (E data : dataVarArg) {
 			Node newNode = new Node(data);
@@ -56,13 +56,13 @@ public class SinglyLinkedList<E> {
 	// Remove node from list. Remove first node with given data
 	void remove(E... dataVarArg) {
 
-		//Perform remove operation for each argument provided
+		// Perform remove operation for each argument provided
 		argIteration: for (E data : dataVarArg) {
 
 			// Account for when list is empty
 			if (isEmpty) {
 				System.out.println("List is empty. Nothing to remove.");
-				//Stop iterating through arguments
+				// Stop iterating through arguments
 				break argIteration;
 			}
 
@@ -86,28 +86,28 @@ public class SinglyLinkedList<E> {
 			Node traversalNode = head;
 			Node traversalNode2 = head.next;
 
-			
 			// Account for when there are 2 or more elements and first is a match
-			if(traversalNode.data == data) {
+			if (traversalNode.data == data) {
 				head = traversalNode2;
-				
+
 				// Update information about list
 				size--;
 
-				
 				// Continue iterating through arguments
 				continue argIteration;
 			}
-			
-			
-			// Iterate through list
-			for (int i = 0; i < size; i++) {
 
+			// Iterate through list
+			for (int i = 0; i < size-1; i++) {
+
+				
+				
+				
 				// Check if data of node matches what you are looking for
 				if (traversalNode2.data == data) {
 
 					// NullPointerException? But it is not being used, just assigned.
-					traversalNode2.next = traversalNode2.next;
+					traversalNode.next = traversalNode2.next;
 
 					// Update information about list
 					size--;
@@ -125,7 +125,7 @@ public class SinglyLinkedList<E> {
 			}
 
 			// If no such element exists
-			System.out.println(data + "is not in list.");
+			System.out.println(data + " is not in list.");
 		}
 	}
 
@@ -148,14 +148,13 @@ public class SinglyLinkedList<E> {
 				traversalNode = traversalNode.next;
 			}
 			return myList;
-			
-		}else {
+
+		} else {
 			return myList + "[[empty]]";
 		}
 
 		// Return String representation of linked list
 
-		
 	}
 
 	private class Node {

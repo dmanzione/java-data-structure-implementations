@@ -31,15 +31,24 @@ public class Main {
 		System.out.println(singlyList);
 
 		// Test removal of several elements at once
-		singlyList.remove("First Element", "ciao", "hi");
+		singlyList.remove("First Element", "hello");
+		System.out.println(singlyList);
+
+		// Test removal when there is one element and element is not in list
+		singlyList.remove("any");
+
+		// Test removal of element when it is the only element in the list
+		singlyList.remove("ciao");
 		System.out.println(singlyList);
 
 		// Test element removal when the list is empty
 		singlyList.remove("any");
+		System.out.println(singlyList);
 
 		// Test addition of several elements at once
 		singlyList.add("First Element", "hi", "hello", "ciao");
 		System.out.println(singlyList);
+
 	}
 
 }
