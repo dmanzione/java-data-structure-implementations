@@ -1,4 +1,4 @@
-package trees;
+package dataStructures;
 
 public class Tree {
 	Node root;
@@ -7,7 +7,6 @@ public class Tree {
 
 	}
 
-	
 	class Node<E> {
 		E data;
 		Node[] children;

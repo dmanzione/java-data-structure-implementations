@@ -1,4 +1,4 @@
-package lists;
+package dataStructures;
 
 public class Queue<E> {
 	private Node first;

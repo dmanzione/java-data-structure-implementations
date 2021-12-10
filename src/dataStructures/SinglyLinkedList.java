@@ -1,4 +1,4 @@
-package lists;
+package dataStructures;
 
 public class SinglyLinkedList<E> {
 	private Node head;
@@ -102,6 +102,10 @@ public class SinglyLinkedList<E> {
 
 	}
 
+	public void print() {
+		System.out.println(this);
+	}
+
 	@Override
 	public String toString() {
 		// String you will concatenate members to and return.
@@ -119,8 +123,7 @@ public class SinglyLinkedList<E> {
 					myList += "-> ";
 					traversalNode = traversalNode.next;
 				}
-			
-				
+
 			}
 			return myList;
 

@@ -1,4 +1,4 @@
-package lists;
+package dataStructures;
 
 public class NoSuchElementException extends Exception {
 	
