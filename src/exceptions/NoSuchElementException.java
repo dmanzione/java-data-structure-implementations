@@ -1,7 +1,7 @@
-package dataStructures;
+package exceptions;
 
 public class NoSuchElementException extends Exception {
-	
+
 	private String dataStructure;
 	private String element;
 
@@ -9,10 +9,10 @@ public class NoSuchElementException extends Exception {
 		this.dataStructure = dataStructure;
 		this.element = element;
 	}
-	
+
 	@Override
 	public String toString() {
-		
+
 		return element + " is not in " + dataStructure;
 	}
 }

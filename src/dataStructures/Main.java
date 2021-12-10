@@ -1,5 +1,8 @@
 package dataStructures;
 
+import exceptions.EmptyDataStructureException;
+import exceptions.NoSuchElementException;
+
 public class Main {
 
 	public static void main(String[] args) throws EmptyDataStructureException, NoSuchElementException {

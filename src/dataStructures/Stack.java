@@ -1,5 +1,7 @@
 package dataStructures;
 
+import exceptions.EmptyDataStructureException;
+
 public class Stack<E> {
 
 	private boolean isEmpty = true;
@@ -15,8 +17,8 @@ public class Stack<E> {
 		}
 
 		top = newNode;
-		
-		//Update size
+
+		// Update size
 		setSize(size + 1);
 	}
 
@@ -35,7 +37,7 @@ public class Stack<E> {
 				top.next = null;
 
 			}
-			//Update size
+			// Update size
 			setSize(size - 1);
 			return poppedVal;
 		}

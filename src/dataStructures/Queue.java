@@ -1,11 +1,12 @@
 package dataStructures;
 
+import exceptions.EmptyDataStructureException;
+
 public class Queue<E> {
 	private Node first;
 	private Node last;
 	private boolean isEmpty = true;
 	private int size = 0;
-
 
 	// Deletion operation. Removes first element
 	public E remove() throws EmptyDataStructureException {
@@ -23,10 +24,10 @@ public class Queue<E> {
 			first = first.next;
 
 		}
-		
-		//Update size 
+
+		// Update size
 		setSize(size - 1);
-		
+
 		return removedVal;
 	}
 
@@ -47,7 +48,7 @@ public class Queue<E> {
 
 		}
 
-		//Update size
+		// Update size
 		setSize(size + 1);
 
 	}
