@@ -13,8 +13,8 @@ public class SinglyLinkedList<E> {
 	// Constructor with parameter to initialize head node
 	SinglyLinkedList(E data) {
 		head = new Node(data);
-		size++;
-		isEmpty = false;
+		setSize(size + 1);
+
 	}
 
 	// Adding node to list
@@ -28,16 +28,13 @@ public class SinglyLinkedList<E> {
 			// If list is empty, simply make new node the head node
 			head = newNode;
 
-			// Update information
-			isEmpty = false;
-
 		} else {
 
 			// Create Node variable to store nodes as we traverse list
 			Node traversalNode = head;
 
 			// Traverse list until very last node (that is, the Node object with null
-			// instance variable called next
+			// instance variable called next)
 			while (traversalNode.next != null) {
 				traversalNode = traversalNode.next;
 			}
@@ -47,7 +44,7 @@ public class SinglyLinkedList<E> {
 		}
 
 		// Increase size
-		size++;
+		setSize(size + 1);
 
 	}
 
@@ -57,7 +54,7 @@ public class SinglyLinkedList<E> {
 		// Account for when list is empty
 		if (isEmpty) {
 			System.out.println("List is empty. Nothing to remove.");
-			// Stop iterating through arguments
+
 			return;
 		}
 
@@ -67,14 +64,13 @@ public class SinglyLinkedList<E> {
 				head = null;
 
 				// Update information about list
-				isEmpty = true;
-				size--;
+
+				setSize(size - 1);
 
 			} else {
 				System.out.println(data + " is not in list.");
 			}
 
-			// Continue iterating through arguments
 			return;
 		}
 
@@ -86,9 +82,8 @@ public class SinglyLinkedList<E> {
 			head = traversalNode2;
 
 			// Update information about list
-			size--;
+			setSize(size - 1);
 
-			// Continue iterating through arguments
 			return;
 		}
 
@@ -98,13 +93,11 @@ public class SinglyLinkedList<E> {
 			// Check if data of node matches what you are looking for
 			if (traversalNode2.data == data) {
 
-				// NullPointerException? But it is not being used, just assigned.
 				traversalNode.next = traversalNode2.next;
 
 				// Update information about list
-				size--;
+				setSize(size - 1);
 
-				// Continue iterating through arguments
 				return;
 
 			} else {
@@ -134,10 +127,12 @@ public class SinglyLinkedList<E> {
 		if (!isEmpty) {
 			for (int i = 0; i < size; i++) {
 				myList += traversalNode;
-				if (i < size - 1) {
+				if (traversalNode.next != null) {
 					myList += "-> ";
+					traversalNode = traversalNode.next;
 				}
-				traversalNode = traversalNode.next;
+			
+				
 			}
 			return myList;
 
@@ -152,6 +147,16 @@ public class SinglyLinkedList<E> {
 	// Get size operation
 	public int getSize() {
 		return size;
+	}
+
+	// Set size operation
+	public void setSize(int size) {
+		this.size = size;
+		if (size == 0) {
+			isEmpty = true;
+		} else {
+			isEmpty = false;
+		}
 	}
 
 	private class Node {

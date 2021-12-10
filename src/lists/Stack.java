@@ -2,9 +2,9 @@ package lists;
 
 public class Stack<E> {
 
-	boolean isEmpty = true;
-	int size = 0;
-	Node top;
+	private boolean isEmpty = true;
+	private int size = 0;
+	private Node top;
 
 	// Parameterless constructor
 	Stack() {
@@ -15,44 +15,42 @@ public class Stack<E> {
 	Stack(E data) {
 		top = new Node(data);
 		isEmpty = false;
-		size++;
+		//Update size
+		setSize(size + 1);
 	}
 
 	public void push(E data) {
 		Node newNode = new Node(data);
 
-		if (isEmpty) {
-			top = newNode;
-
-			isEmpty = false;
-		} else {
+		if (!isEmpty) {
 			top.next = newNode;
 			newNode.previous = top;
-			top = newNode;
-
 		}
 
-		size++;
+		top = newNode;
+		
+		//Update size
+		setSize(size + 1);
 	}
 
 	public E pop() throws EmptyDataStructureException {
 		if (isEmpty) {
 			throw new EmptyDataStructureException("Stack");
 		} else {
-			E result = top.data;
+			E poppedVal = top.data;
 			if (size == 1) {
 
 				top = null;
-				isEmpty = true;
-				size = 0;
 
 			} else {
 
 				top = top.previous;
 				top.next = null;
-				size--;
+
 			}
-			return result;
+			//Update size
+			setSize(size - 1);
+			return poppedVal;
 		}
 	}
 
@@ -66,6 +64,16 @@ public class Stack<E> {
 	// Get size operation
 	public int getSize() {
 		return size;
+	}
+
+	// Set size operation
+	public void setSize(int size) {
+		this.size = size;
+		if (size == 0) {
+			isEmpty = true;
+		} else {
+			isEmpty = false;
+		}
 	}
 
 	private class Node {

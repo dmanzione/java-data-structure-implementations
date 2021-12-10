@@ -6,8 +6,6 @@ public class Queue<E> {
 	private boolean isEmpty = true;
 	private int size = 0;
 
-	
-
 	// Constructor with parameter
 	Queue(E data) {
 		first = last = new Node(data);
@@ -26,19 +24,21 @@ public class Queue<E> {
 			throw new EmptyDataStructureException("Queue");
 		}
 
-		E result = first.data;
+		E removedVal = first.data;
 
 		if (size == 1) {
 			first = last = null;
-			isEmpty=true;
-			size--;
+
 		} else {
-			
+
 			first = first.next;
-			size--;
+
 		}
 		
-		return result;
+		//Update size 
+		setSize(size - 1);
+		
+		return removedVal;
 	}
 
 	// Insertion operation. Inserts element at top
@@ -46,18 +46,20 @@ public class Queue<E> {
 		Node newNode = new Node(data);
 		if (isEmpty) {
 			first = last = new Node(data);
-			size++;
-			isEmpty = false;
+
 		} else if (size == 1) {
 			last = newNode;
-			size++;
+
 			first.next = last;
 
 		} else {
 			last.next = newNode;
 			last = newNode;
-			size++;
+
 		}
+
+		//Update size
+		setSize(size + 1);
 
 	}
 
@@ -68,10 +70,20 @@ public class Queue<E> {
 			throw new EmptyDataStructureException("Queue");
 		return last.data;
 	}
-	
+
 	// Get size operation
 	public int getSize() {
 		return size;
+	}
+
+	// Set size operation
+	public void setSize(int size) {
+		this.size = size;
+		if (size == 0) {
+			isEmpty = true;
+		} else {
+			isEmpty = false;
+		}
 	}
 
 	// Node nested class
