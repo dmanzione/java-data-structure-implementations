@@ -1,5 +1,8 @@
-package dataStructures;
+package application;
 
+import dataStructures.Queue;
+import dataStructures.SinglyLinkedList;
+import dataStructures.Stack;
 import exceptions.EmptyDataStructureException;
 import exceptions.NoSuchElementException;
 
