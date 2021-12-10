@@ -6,22 +6,11 @@ public class Queue<E> {
 	private boolean isEmpty = true;
 	private int size = 0;
 
-	// Constructor with parameter
-	Queue(E data) {
-		first = last = new Node(data);
-		size++;
-		isEmpty = false;
-	}
-
-	// Parameterless constructor
-	Queue() {
-
-	}
 
 	// Deletion operation. Removes first element
 	public E remove() throws EmptyDataStructureException {
 		if (isEmpty) {
-			throw new EmptyDataStructureException("Queue");
+			throw new EmptyDataStructureException("Queue", "remove");
 		}
 
 		E removedVal = first.data;
@@ -67,7 +56,7 @@ public class Queue<E> {
 
 	public E peek() throws EmptyDataStructureException {
 		if (isEmpty)
-			throw new EmptyDataStructureException("Queue");
+			throw new EmptyDataStructureException("Queue", "peek");
 		return last.data;
 	}
 

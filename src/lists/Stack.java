@@ -6,19 +6,6 @@ public class Stack<E> {
 	private int size = 0;
 	private Node top;
 
-	// Parameterless constructor
-	Stack() {
-
-	}
-
-	// Constructor with parameters
-	Stack(E data) {
-		top = new Node(data);
-		isEmpty = false;
-		//Update size
-		setSize(size + 1);
-	}
-
 	public void push(E data) {
 		Node newNode = new Node(data);
 
@@ -35,7 +22,7 @@ public class Stack<E> {
 
 	public E pop() throws EmptyDataStructureException {
 		if (isEmpty) {
-			throw new EmptyDataStructureException("Stack");
+			throw new EmptyDataStructureException("Stack", "pop");
 		} else {
 			E poppedVal = top.data;
 			if (size == 1) {
@@ -56,7 +43,7 @@ public class Stack<E> {
 
 	public E peek() throws EmptyDataStructureException {
 		if (isEmpty)
-			throw new EmptyDataStructureException("Stack");
+			throw new EmptyDataStructureException("Stack", "peek");
 		else
 			return top.data;
 	}

@@ -5,20 +5,8 @@ public class SinglyLinkedList<E> {
 	private int size = 0;
 	private boolean isEmpty = true;
 
-	// Parameterless constructor
-	SinglyLinkedList() {
-
-	}
-
-	// Constructor with parameter to initialize head node
-	SinglyLinkedList(E data) {
-		head = new Node(data);
-		setSize(size + 1);
-
-	}
-
 	// Adding node to list
-	void add(E data) {
+	public void add(E data) {
 
 		// Perform add operation for each argument provided
 
@@ -49,7 +37,7 @@ public class SinglyLinkedList<E> {
 	}
 
 	// Remove node from list. Remove first node with given data
-	void remove(E data) {
+	public void remove(E data) {
 
 		// Account for when list is empty
 		if (isEmpty) {
