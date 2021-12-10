@@ -12,6 +12,7 @@ public class Stack<E> {
 		Node newNode = new Node(data);
 
 		if (!isEmpty) {
+
 			top.next = newNode;
 			newNode.previous = top;
 		}
@@ -39,6 +40,7 @@ public class Stack<E> {
 			}
 			// Update size
 			setSize(size - 1);
+
 			return poppedVal;
 		}
 	}
