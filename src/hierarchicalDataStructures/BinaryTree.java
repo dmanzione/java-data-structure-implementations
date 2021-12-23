@@ -26,26 +26,28 @@ public class BinaryTree<E> {
 		binarySearchTree.root.leftChild.rightChild = new Node(3);
 		binarySearchTree.root.rightChild.leftChild = new Node(5);
 		binarySearchTree.root.rightChild.rightChild = new Node(7);
-
 		binarySearchTree.inOrderTraversalPrint();
 		System.out.println("\n");
-		BinaryTree bTree = new BinaryTree(1);
-		bTree.root.leftChild = new Node(2);
-		bTree.root.rightChild = new Node(5);
-		bTree.root.leftChild.leftChild = new Node(3);
-		bTree.root.leftChild.rightChild = new Node(4);
-		bTree.root.rightChild.leftChild = new Node(6);
-		bTree.root.rightChild.rightChild = new Node(7);
-		bTree.preOrderTraversalPrint();
+		
+		BinaryTree minHeap = new BinaryTree(1);
+		minHeap.root.leftChild = new Node(2);
+		minHeap.root.rightChild = new Node(5);
+		minHeap.root.leftChild.leftChild = new Node(3);
+		minHeap.root.leftChild.rightChild = new Node(4);
+		minHeap.root.rightChild.leftChild = new Node(6);
+		minHeap.root.rightChild.rightChild = new Node(7);
+		minHeap.preOrderTraversalPrint();
 		System.out.println("\n");
-		BinaryTree bTree2 = new BinaryTree(7);
-		bTree2.root.leftChild = new Node(3);
-		bTree2.root.rightChild = new Node(6);
-		bTree2.root.leftChild.leftChild = new Node(1);
-		bTree2.root.leftChild.rightChild = new Node(2);
-		bTree2.root.rightChild.rightChild = new Node(5);
-		bTree2.root.rightChild.leftChild = new Node(4);
-		bTree2.postOrderTraversalPrint();
+		
+		
+		BinaryTree maxHeap = new BinaryTree(7);
+		maxHeap.root.leftChild = new Node(3);
+		maxHeap.root.rightChild = new Node(6);
+		maxHeap.root.leftChild.leftChild = new Node(1);
+		maxHeap.root.leftChild.rightChild = new Node(2);
+		maxHeap.root.rightChild.rightChild = new Node(5);
+		maxHeap.root.rightChild.leftChild = new Node(4);
+		maxHeap.postOrderTraversalPrint();
 		System.out.println("\n");
 	}
 
