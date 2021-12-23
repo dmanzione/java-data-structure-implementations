@@ -1,4 +1,4 @@
-package dataStructures;
+package hierarchicalDataStructures;
 
 public class Tree {
 	Node root;
@@ -14,6 +14,7 @@ public class Tree {
 		Node(E data) {
 
 			this.data = data;
+			children = null;
 
 		}
 

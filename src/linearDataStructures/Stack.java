@@ -1,4 +1,4 @@
-package dataStructures;
+package linearDataStructures;
 
 import exceptions.EmptyDataStructureException;
 
@@ -67,6 +67,42 @@ public class Stack<E> {
 		}
 	}
 
+	@Override
+	public String toString() {
+		if (isEmpty) {
+			return "Stack []";
+		}
+		Stack<E> tempStack = new Stack();
+		Node traversalNode = top;
+		tempStack.push(traversalNode.data);
+		while (traversalNode.previous != null) {
+			traversalNode = traversalNode.previous;
+			tempStack.push(traversalNode.data);
+
+		}
+		String stackString = "";
+		while (!tempStack.isEmpty) {
+			if (tempStack.getSize() == getSize()) {
+				try {
+					stackString += tempStack.pop();
+				} catch (EmptyDataStructureException e) {
+					System.out.println(e);
+				}
+			}
+			try {
+
+				stackString += " ^ " + tempStack.pop();
+			} catch (EmptyDataStructureException e) {
+
+				e.printStackTrace();
+			}
+		}
+		stackString = "Stack [" + stackString + "]";
+
+		return stackString;
+
+	}
+
 	private class Node {
 		E data;
 		Node next;
@@ -75,6 +111,11 @@ public class Stack<E> {
 		Node(E data) {
 			this.data = data;
 		}
+
+	}
+
+	public void print() {
+		System.out.println(this);
 
 	}
 }

@@ -1,4 +1,4 @@
-package dataStructures;
+package linearDataStructures;
 
 import exceptions.EmptyDataStructureException;
 
@@ -73,6 +73,33 @@ public class Queue<E> {
 			isEmpty = true;
 		} else {
 			isEmpty = false;
+		}
+	}
+
+	@Override
+	public String toString() {
+
+		if (isEmpty) {
+			return "Queue []";
+
+		} else {
+			String queue = "Queue [";
+			Node traversalNode = first;
+			queue += traversalNode.data;
+			if (size > 1) {
+				queue += " -> ";
+			}
+			while (traversalNode.next != null) {
+
+				traversalNode = traversalNode.next;
+				if (traversalNode.next == null) {
+					queue += traversalNode.data;
+					break;
+				} else {
+					queue += traversalNode.data + " -> ";
+				}
+			}
+			return queue + "]";
 		}
 	}
 

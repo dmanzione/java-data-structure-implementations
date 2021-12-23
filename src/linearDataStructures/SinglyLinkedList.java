@@ -1,4 +1,4 @@
-package dataStructures;
+package linearDataStructures;
 
 public class SinglyLinkedList<E> {
 	private Node head;
@@ -109,7 +109,7 @@ public class SinglyLinkedList<E> {
 	@Override
 	public String toString() {
 		// String you will concatenate members to and return.
-		String myList = "SinglyLinkedList: \n\t";
+		String myList = "SinglyLinkedList [";
 
 		// Create Node variable to store nodes as we traverse list
 		Node traversalNode = head;
@@ -125,6 +125,7 @@ public class SinglyLinkedList<E> {
 				}
 
 			}
+			myList += "]";
 			return myList;
 
 		} else {
