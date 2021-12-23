@@ -5,6 +5,46 @@ public class SinglyLinkedList<E> {
 	private int size = 0;
 	private boolean isEmpty = true;
 
+	public static void main(String[] args) {
+		// Check creation of list with parameter
+		SinglyLinkedList<String> singlyList = new SinglyLinkedList<String>();
+
+		// Check addition of new elements to list
+		singlyList.add("hi");
+		singlyList.add("hello");
+		singlyList.add("ciao");
+		singlyList.print();
+
+		// Check creation of list without parameters and addition of elements to said
+		// list
+		SinglyLinkedList<Integer> singlyList2 = new SinglyLinkedList<>();
+		singlyList2.add(23);
+		singlyList2.add(234324);
+		singlyList2.print();
+
+//		// Test element removal when there are 2 or more elements and element is in list
+		singlyList.remove("hi");
+		singlyList.print();
+//
+//		// Test element removal when there are 2 or more elements and element is NOT in
+//		// list
+		singlyList.remove("hallo");
+		singlyList.print();
+		singlyList.remove("Hello");
+		singlyList.print();
+
+		// Test removal when there is one element and element is not in list
+		singlyList.remove("any");
+
+		// Test removal of element when it is the only element in the list
+		singlyList.remove("ciao");
+		singlyList.print();
+//
+//		// Test element removal when the list is empty
+		singlyList.remove("any");
+		singlyList.print();
+	}
+
 	// Adding node to list
 	public void add(E data) {
 

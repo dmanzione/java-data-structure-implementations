@@ -8,6 +8,25 @@ public class Queue<E> {
 	private boolean isEmpty = true;
 	private int size = 0;
 
+	public static void main(String[] args) throws EmptyDataStructureException {
+//		Insertion operations.
+		Queue<String> queue = new Queue<>();
+
+		queue.add("Hello");
+		System.out.println(queue.peek());
+		queue.add("Hi");
+		System.out.println(queue.peek());
+		queue.add("Ciao");
+		System.out.println(queue.peek());
+
+//		Removal operations
+		System.out.println(queue.remove());
+		System.out.println(queue.remove());
+		System.out.println(queue.remove());
+		System.out.println(queue.remove());
+
+	}
+
 	// Deletion operation. Removes first element
 	public E remove() throws EmptyDataStructureException {
 		if (isEmpty) {

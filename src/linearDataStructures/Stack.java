@@ -8,6 +8,30 @@ public class Stack<E> {
 	private int size = 0;
 	private Node top;
 
+	public static void main(String[] args) throws EmptyDataStructureException {
+
+		// STACK TESTS
+
+		Stack<String> stack = new Stack<>();
+		stack.push("Hello");
+		stack.push("Hi");
+		stack.push("Ciao");
+
+		System.out.println(stack.pop());
+		System.out.println(stack.pop());
+		System.out.println(stack.pop());
+
+		Stack<Long> stack1 = new Stack<>();
+		stack1.push(423423l);
+		stack1.push(423l);
+		stack1.push(4234l);
+
+		System.out.println(stack1.pop());
+		System.out.println(stack1.pop());
+		System.out.println(stack1.pop());
+		System.out.println(stack1.pop());
+	}
+
 	public void push(E data) {
 		Node newNode = new Node(data);
 
